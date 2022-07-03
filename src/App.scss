@@ -1,0 +1,23 @@
+.App {
+  table {
+    max-width: 600px;
+    width: 99vw;
+    height: auto;
+    margin: auto;
+    background: rgba(0, 0, 0, 0.3);
+    margin-top: 100px;
+    tbody {
+      background: white;
+      tr,
+      th {
+        height: 25px;
+      }
+      td {
+        text-align: center;
+      }
+      .regions {
+        padding: 20px;
+      }
+    }
+  }
+}

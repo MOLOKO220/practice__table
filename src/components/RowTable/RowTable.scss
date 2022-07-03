@@ -1,0 +1,21 @@
+.RowTable {
+  table {
+    width: 500px;
+    height: auto;
+    margin: auto;
+    background: black;
+    tbody {
+      background: white;
+      tr,
+      th {
+        height: 25px;
+      }
+      td {
+        text-align: center;
+      }
+      .test {
+        height: 50px;
+      }
+    }
+  }
+}
