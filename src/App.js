@@ -118,6 +118,7 @@ export default function App() {
 
   return (
     <div className="App">
+      {/* тест */}
       <table className="table">
         <tbody>
           <tr>
