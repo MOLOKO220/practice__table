@@ -13,7 +13,7 @@ export default function App() {
   return (
     <div className="App ">
       <Routes>
-        <Route path="/" element={<Table />} />
+        <Route path="/practice__table" element={<Table />} />
 
         {/* генерируем линк: "c[0]"- город,   "y[0]" - год, q[0] - квартал */}
         {data.map((c) => {
@@ -22,7 +22,7 @@ export default function App() {
               return (
                 <Route
                   key={c[0]}
-                  path={c[0] + y[0] + q[0]}
+                  path={"/practice__table/" + c[0] + y[0] + q[0]}
                   element={
                     <TableItem
                       date={{
