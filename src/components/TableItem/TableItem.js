@@ -107,7 +107,7 @@ export default function TableItem(props) {
           </tr>
         </tbody>
       </table>
-      <NavLink to="/" className="popup__closebtn">
+      <NavLink to="/practice__table" className="popup__closebtn">
         x
       </NavLink>
       <button className="popup__addBtn" onClick={addRow}>
