@@ -8,7 +8,7 @@ export default function TableYear(props) {
 
   // открываем в новом окне
   function windowOpen(e) {
-    window.open(`practice__table/${e.target.dataset.url}`);
+    window.open(`/${e.target.dataset.url}`);
   }
 
   return (
