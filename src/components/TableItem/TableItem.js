@@ -1,5 +1,4 @@
 import React, { useRef, useState } from "react";
-import { NavLink } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 
 import { setDate } from "../../store/mainReducer";
@@ -107,9 +106,14 @@ export default function TableItem(props) {
           </tr>
         </tbody>
       </table>
-      <NavLink to="/practice__table" className="popup__closebtn">
+      <div
+        className="popup__closebtn"
+        onClick={() => {
+          window.close();
+        }}
+      >
         x
-      </NavLink>
+      </div>
       <button className="popup__addBtn" onClick={addRow}>
         Add
       </button>

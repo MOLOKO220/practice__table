@@ -2,9 +2,14 @@ import React from "react";
 import "./Table.scss";
 import { useSelector } from "react-redux";
 
-import TableItem from "../TableYear/TableYear";
+import TableYear from "../TableYear/TableYear";
 
 export default function Table() {
+  // Вызываем перезагрузку страницы чтобы внести новые данные в редюсор, и автоматически увидеть их в таблице. не лучшее решение(
+  window.onfocus = function () {
+    window.location.reload();
+  };
+
   // redux
   const data = Object.entries(useSelector((state) => state.main.data));
 
@@ -42,12 +47,12 @@ export default function Table() {
                 {Object.keys(data[0][1].G).map((y) => {
                   if (e[1].G[y] != undefined) {
                     return (
-                      <TableItem
+                      <TableYear
                         key={y}
                         citi={e[0]}
                         year={y}
                         data={Object.entries(e[1].G[y])}
-                      ></TableItem>
+                      ></TableYear>
                     );
                   } else {
                     return (
