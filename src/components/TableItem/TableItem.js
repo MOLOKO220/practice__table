@@ -1,9 +1,7 @@
-import React, { useRef, useState } from "react";
+import React, { useRef } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
 import { setDate } from "../../store/mainReducer";
-
-import "./TableItem.scss";
 
 export default function TableItem(props) {
   // redux
@@ -14,6 +12,7 @@ export default function TableItem(props) {
   const thisDataItem =
     data[props.date.citi].G[props.date.year][props.date.quarter];
 
+  // hooks
   // инпуты таблицы
   const inputNumber = useRef(null);
   const inputComment = useRef(null);
@@ -46,10 +45,39 @@ export default function TableItem(props) {
     );
   }
 
+  //стелизируем всплывающее окно
+  const css = {
+    TableItem: {
+      position: "relative",
+      width: "600px",
+    },
+    table: {
+      background: "black",
+    },
+    tbody: {
+      background: "white",
+    },
+    popup__closebtn: {
+      position: "absolute",
+      top: "-10px",
+      right: "100px",
+      fontSize: "30px",
+      fontWeight: "900",
+      color: "black",
+    },
+    popup__addBtn: {
+      position: "absolute",
+      right: "75px",
+      height: "25px",
+      width: "40px",
+      bottom: "0px",
+    },
+  };
+
   return (
-    <div className="TableItem">
-      <table>
-        <tbody>
+    <div style={css.TableItem}>
+      <table style={css.table}>
+        <tbody style={css.tbody}>
           <tr>
             <th colSpan="1">value</th>
             <th colSpan="1">date</th>
@@ -107,14 +135,18 @@ export default function TableItem(props) {
         </tbody>
       </table>
       <div
-        className="popup__closebtn"
+        style={css.popup__closebtn}
         onClick={() => {
-          window.close();
+          props.date.close(false);
         }}
       >
         x
       </div>
-      <button className="popup__addBtn" onClick={addRow}>
+      <button
+        className="popup__addBtn"
+        onClick={addRow}
+        style={css.popup__addBtn}
+      >
         Add
       </button>
     </div>
